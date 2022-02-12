@@ -1,0 +1,32 @@
+{
+  "name": "guvi-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sourabhpatole/guvi-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sourabhpatole/guvi-node/issues"
+  },
+  "homepage": "https://github.com/sourabhpatole/guvi-node#readme",
+  "dependencies": {
+    "dotenv": "^12.0.3",
+    "express": "^4.17.2",
+    "mongodb": "^4.3.0",
+    "mongoose": "^6.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "webpack-cli": "^4.9.1"
+  },
+  "description": ""
+}

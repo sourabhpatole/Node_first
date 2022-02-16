@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 // const movies = [
 //   {
@@ -102,6 +102,9 @@ const client = await createConnection();
 //   res.send("Hello world");
 // });
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.send("hello world");
+});
 app.get("/movies", async (req, res) => {
   // const { language, rating } = req.query;
   // console.log(req.query);

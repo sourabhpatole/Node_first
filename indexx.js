@@ -88,10 +88,10 @@ const PORT = process.env.PORT;
 // const MONGO_URL = "mongodb://0.0.0.0:27017/";
 // mongodb+srv://sourabh:<password>@cluster0.jluxa.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 // const MONGO_URL = "mongodb://0.0.0.0:27017/";
-const MONGO_URLL = process.env.MONGO_URLL;
+const MONGO_URL = process.env.MONGO_URL;
 
 async function createConnection() {
-  const client = new MongoClient(MONGO_URLL);
+  const client = new MongoClient(MONGO_URL);
   await client.connect();
   console.log("Mongo is connected");
   return client;

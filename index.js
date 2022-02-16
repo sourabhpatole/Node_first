@@ -3,9 +3,7 @@ const express = require("express");
 // import mongoose from "mongoose";
 // import express from "express";
 import { MongoClient } from "mongodb";
-import dotenv from "dotenv";
 
-dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 9000;
 const movies = [
@@ -90,7 +88,7 @@ const movies = [
 // const MONGO_URL =
 //   "mongodb://127.0.0.1:27017/newDatabase?retryWrites=true&w=majority";
 
-const MONGO_URL = process.env.MONGO_URL;
+// const MONGO_URL = process.env.MONGO_URL;
 async function createCollection() {
   const client = new MongoClient(MONGO_URL);
   await client.connect();

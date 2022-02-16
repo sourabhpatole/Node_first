@@ -1,5 +1,8 @@
 import express from "express";
 import { MongoClient } from "mongodb";
+import dotenv from "dotenv";
+
+dotenv.config();
 const app = express();
 const PORT = 3000;
 
@@ -81,10 +84,14 @@ const PORT = 3000;
 //     language: "english",
 //   },
 // ];
-const MONGO_URL = "mongodb://0.0.0.0:27017/";
+
+// const MONGO_URL = "mongodb://0.0.0.0:27017/";
+// mongodb+srv://sourabh:<password>@cluster0.jluxa.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+// const MONGO_URL = "mongodb://0.0.0.0:27017/";
+const MONGO_URLL = process.env.MONGO_URLL;
 
 async function createConnection() {
-  const client = new MongoClient(MONGO_URL);
+  const client = new MongoClient(MONGO_URLL);
   await client.connect();
   console.log("Mongo is connected");
   return client;

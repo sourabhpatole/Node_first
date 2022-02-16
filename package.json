@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/sourabhpatole/guvi-node#readme",
   "dependencies": {
-    "dotenv": "^12.0.3",
+    "dotenv": "^12.0.4",
     "express": "^4.17.2",
     "mongodb": "^4.3.1",
     "mongoose": "^6.1.6"

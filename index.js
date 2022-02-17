@@ -3,6 +3,7 @@ import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
 
 dotenv.config();
+console.log(process.env);
 const app = express();
 const PORT = process.env.PORT;
 
@@ -89,6 +90,7 @@ const PORT = process.env.PORT;
 // mongodb+srv://sourabh:<password>@cluster0.jluxa.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 // const MONGO_URL = "mongodb://0.0.0.0:27017/";
 const MONGO_URL = process.env.MONGO_URL;
+app.use(express.json());
 
 async function createConnection() {
   const client = new MongoClient(MONGO_URL);
@@ -101,7 +103,6 @@ const client = await createConnection();
 // app.get("/", (req, res) => {
 //   res.send("Hello world");
 // });
-app.use(express.json());
 app.get("/", (req, res) => {
   res.send("hello world");
 });

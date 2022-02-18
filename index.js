@@ -9,6 +9,7 @@ import {
 } from "./helper.js";
 import { moviesRouter } from "./routes/movies.js";
 import { userRouter } from "./routes/user.js";
+import cors from "cors";
 
 dotenv.config();
 // console.log(process.env);
@@ -20,7 +21,7 @@ const PORT = process.env.PORT;
 // const MONGO_URL = "mongodb://0.0.0.0:27017/";
 const MONGO_URL = process.env.MONGO_URL;
 app.use(express.json());
-
+app.use(cors());
 async function createConnection() {
   const client = new MongoClient(MONGO_URL);
   await client.connect();

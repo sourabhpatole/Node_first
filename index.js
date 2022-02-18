@@ -8,8 +8,7 @@ import {
   deleteMoviesById,
 } from "./helper.js";
 import { moviesRouter } from "./routes/movies.js";
-import { usersRouter } from "./routes/users.js";
-import bcrypt from "bcrypt";
+import { userRouter } from "./routes/user.js";
 
 dotenv.config();
 // console.log(process.env);
@@ -37,14 +36,7 @@ app.get("/", (req, res) => {
   res.send("hello world");
 });
 app.use("/movies", moviesRouter);
-app.use("/users", usersRouter);
+app.use("/user", userRouter);
 app.listen(PORT, () => console.log("server is started", PORT));
 
 // mongodb+srv://sourabh:sourabh123@cluster0.jluxa.mongodb.net/sourabh?retryWrites=true&w=majority
-async function genPassword(password) {
-  const salt = await bcrypt.genSalt(10);
-  console.log(salt);
-  const hash = await bcrypt.hash(password, salt);
-  console.log(hash);
-}
-console.log(genPassword("Password123"));
